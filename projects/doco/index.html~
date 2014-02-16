@@ -58,7 +58,7 @@
      <h2 class="ui header">Document Converter for Google Search API</h2>
      <p>Doco is a lightweight Java library used to convert (from and to) indexed Documents provided by Search API in Google App Engine.</p>
      <a class="ui red large labeled icon button" 
-      onClick="_gaq.push(['_trackEvent', 'Doco', 'Download', 'doco-v0.1.0.jar']);"
+      onClick="_gaq.push(['_trackEvent', 'Videos', 'Play', 'Gone With the Wind']);"
       href="https://github.com/marcosvidolin/doco/releases/download/v0.1.0/doco-v0.1.0.jar"><i class="awesome download cloud icon"></i> Download</a>
     </div>
     <div class="inverted advertisement">
