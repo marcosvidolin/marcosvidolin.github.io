@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>Doco</title>
+
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="description" content="Doco is a lightweight Java library used to convert (from and to) indexed Documents provided by Search API in Google App Engine." />
+  <meta name="keywords" content="doco, java, search api, google, google app engine, app engine, appengine, library, framework, vidolin" />
+  <link rel="image_src" type="image/jpeg" href="images/share.png">
+
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" class="ui" href="/resource/library/semantic/css/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="/resource/library/semantic/css/semantic.css" />
+  <link rel="stylesheet" type="text/css" href="/resource/css/doco-homepage.css" />
+  <link rel="stylesheet" type="text/css" href="/resource/library/rainbow/themes/github.css" />
+
+</head>
+<body id="home">
+
+
+<div class="ui fixed transparent inverted main menu">
+    <div class="container">
+      <div class="title item">
+        Vidolima > Projects > Doco
+      </div>
+            
+      <div class="right menu">
+        <div class="vertically fitted borderless item">
+          <iframe src="http://ghbtns.com/github-btn.html?user=marcosvidolin&amp;repo=doco&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+        </div>
+        
+        <a class="popup icon github item" data-content="View project on Github" href="https://github.com/marcosvidolin/doco">
+          <i class="icon github"></i>
+        </a>
+      </div>
+    </div>
+</div>
+
+
+  <div class="ui inverted page grid masthead segment">
+   <div class="column">
+    <div class="introduction">
+     <h1 class="ui header">DOCO <a class="ui black label" href="https://github.com/marcosvidolin/doco/blob/master/RELEASE_NOTES.md">0.1.0</a></h1>
+     <h2 class="ui header">Document Converter for Google Search API</h2>
+     <p>Doco is a lightweight Java library used to convert (from and to) indexed Documents provided by Search API in Google App Engine.</p>
+     <a class="ui red large labeled icon button" href="https://github.com/marcosvidolin/doco/releases/download/v0.1.0/doco-v0.1.0.jar"><i class="awesome download cloud icon"></i> Download</a>
+    </div>
+    <div class="inverted advertisement">
+    </div>
+   </div>
+  </div>
+
+
+<div class="stripe">
+  <div class="ui page grid">
+    <div class="ui column">
+
+
+      <h2 class="ui header">
+        <i class="circular emphasized book icon"></i>
+        <div class="content">
+          How to use Doco?
+          <div class="sub header">
+          	See in the three steps below a simple example of using Doco. You'll really notice how easy is to work with Google Search API using Doco library.
+          </div>
+        </div>
+      </h2>
+      <br>
+      <h2 class="ui header">
+        <i class="circular emphasized icon">1</i>
+        <div class="content">
+          Mapping the Post entity
+          <div class="sub header">
+            Maps the fields you want to search in a document
+          </div>
+        </div>
+      </h2>
+      <div class="ui stackable two column grid">
+        <div class="column">
+          <a class="ui teal label" href="/collections/grid.html">Doco</a>
+            <pre>
+              <code data-language="java">
+@DocumenttIndex
+public class Post {
+				
+  @DocumentId
+  private Long id;
+  @DocumentField
+  private String author;
+  @DocumentField(type = FieldType.DATE)
+  private Date creation;
+  @DocumentField
+  private String title;
+  @DocumentField(type = FieldType.HTML)
+  private String content;
+  @DocumentField(type = FieldType.GEO_POINT)
+  private GeoPoint location;
+  private String notRelevantForSearch;
+				  
+  // getters and setters omitted
+				  
+}
+			  </code>
+		    </pre>
+        </div>
+        <div class="column">
+          <div class="ui black label">Without Doco</div>
+          <!--div class="ui instructive segment"-->
+            <pre>
+              <code data-language="java">
+public class Post {
+				
+  private Long id;
+  private String author;
+  private Date creation;
+  private String title;
+  private String content;
+  private GeoPoint location;
+  private String notRelevantForSearch;
+				  
+  // getters and setters omitted
+				  
+}
+
+
+
+
+
+
+
+			  </code>
+		    </pre>
+          <!--/div-->
+        </div>
+        
+
+        <h2 class="ui header">
+          <i class="circular emphasized icon">2</i>
+          <div class="content">
+            Putting the Post as a document in an index
+            <div class="sub header">
+              Creates a document given a Post object and puts the document in an index
+            </div>
+          </div>
+        </h2>
+        <div class="column">
+          <a class="ui teal label" href="/collections/menu.html">Doco</a>
+          	<pre>
+              <code data-language="java">
+// just convert a Post to a Document
+Doco doco = new Doco();
+Document document = doco.toDocument(post);
+ 				
+// gets an Index and saves the Document
+Index index = doco.getIndex(Post.class);
+index.put(document);
+ 				
+ 				
+ 				
+ 				
+ 				
+ 				
+ 				
+ 				
+ 				
+ 				
+ 				
+ 				
+ 				
+ 				
+              </code>
+            </pre>
+        </div>
+        <div class="column">
+          <div class="ui black label">Without Doco</div>
+          	<pre>
+              <code data-language="java">
+// creates a document with all Post fields
+Document document = Document.newBuilder()
+  .setId(post.getId().toString())
+  .addField(Field.newBuilder().setName("author")
+    .setText(post.getAuthor()))
+  .addField(Field.newBuilder().setName("creation")
+    .setDate(post.getCreation()))
+  .addField(Field.newBuilder().setName("title")
+    .setText(post.getTitle()))
+  .addField(Field.newBuilder().setName("content")
+    .setHTML(post.getContent()))
+  .addField(Field.newBuilder().setName("location")
+    .setGeoPoint(post.getLocation()))
+  .build();
+ 				
+// creates an Index and saves the Document
+IndexSpec indexSpec = IndexSpec.newBuilder()
+  .setName("Post").build(); 
+Index index = SearchServiceFactory.getSearchService()
+  .getIndex(indexSpec);
+index.put(document);
+              </code>
+            </pre>
+        </div>
+        
+
+        <h2 class="ui header">
+          <i class="circular emphasized icon">3</i>
+          <div class="content">
+            Retrieving document as a Post object from index
+            <div class="sub header">
+              Creates a Post object given a document retrieved from index
+            </div>
+          </div>
+        </h2>
+        <div class="column">
+          <a class="ui teal label" href="/collections/menu.html">Doco</a>
+          	<pre>
+              <code data-language="java">
+Doco doco = new Doco();
+Index index = doco.getIndex(Post.class);
+Document document = index.get("00123");
+ 				
+Post post = doco.fromDocument(document, Post.class);
+ 				
+
+
+ 				
+ 				
+ 				
+ 				
+ 				
+ 				
+ 				
+              </code>
+            </pre>
+        </div>
+        <div class="column">
+          <div class="ui black label">Without Doco</div>
+          	<pre>
+              <code data-language="java">
+IndexSpec indexSpec = IndexSpec.newBuilder()
+  .setName("Post").build(); 
+Index index = SearchServiceFactory.getSearchService()
+  .getIndex(indexSpec);
+  				
+Document document = index.get("00123");
+              
+Post post = new Post();
+post.setId(document.getId());
+post.setAuthor(document.getOnlyField("author").getText());
+post.setCreation(document.getOnlyField("creation").getDate());
+post.setTitle(document.getOnlyField("title").getText());
+post.setContent(document.getOnlyField("content").getHTML());
+post.setLocation(document.getOnlyField("location")
+  .getGeoPoint()); 				
+              </code>
+            </pre>
+        </div>
+        
+        
+    </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="ui inverted teal page grid segment">
+    <div class="ten wide column">
+      <div class="ui one column stackable grid">
+        <div class="column">
+          <a class="icon-github" href="https://github.com/marcosvidolin/doco">
+		    <img src="/resource/images/github-11-xxl.png" class="ui small image">     
+		    <span style="color:white;"><font size="12px">GitHub</font> <br> <font size="4px">Contribute and make DOCO better</font></span>
+		  </a>
+        </div>
+        <!--div class="column">
+          <div class="column">
+            <i class="bug icon large"> <span style="color:white;"><font size="4px">Report Bug</font></span></i>
+          </div>
+        </div-->
+      </div>
+    </div>
+    <div class="six wide right floated aligned column">
+      <br><br><br><br><br><br><br>
+      <b>Copyright 2014</b> Marcos Alexandre Vidolin de Lima
+    </div>
+  </div>
+
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>  
+  <script src="/resource/library/rainbow/js/rainbow.min.js"></script>
+  <script src="/resource/library/rainbow/js/language/java.js"></script>
+  
+</body>
+
+</html>
