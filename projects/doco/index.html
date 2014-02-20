@@ -231,7 +231,7 @@ index.put(document);
               <code data-language="java">
 Doco doco = new Doco();
 Index index = doco.getIndex(Post.class);
-Document document = index.get("00123");
+Document document = index.get(12345);
  				
 Post post = doco.fromDocument(document, Post.class);
  				
@@ -256,7 +256,7 @@ IndexSpec indexSpec = IndexSpec.newBuilder()
 Index index = SearchServiceFactory.getSearchService()
   .getIndex(indexSpec);
   				
-Document document = index.get("00123");
+Document document = index.get(12345);
               
 Post post = new Post();
 post.setId(document.getId());
