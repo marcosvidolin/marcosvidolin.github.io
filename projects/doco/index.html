@@ -99,7 +99,7 @@
 public class Post {
 				
   @DocumentId
-  private StringLong id;
+  private Long id;
   @DocumentField
   private String author;
   @DocumentField(type = FieldType.DATE)
@@ -125,7 +125,7 @@ public class Post {
               <code data-language="java">
 public class Post {
 				
-  private String id;
+  private Long id;
   private String author;
   private Date creation;
   private String title;
