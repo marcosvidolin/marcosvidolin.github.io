@@ -24,9 +24,10 @@
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-48081792-1', 'vidolima.com');
+    ga('create', 'UA-48081792-2', 'vidolima.com');
     ga('send', 'pageview');
-  </script>  
+
+  </script>
 
 </head>
 <body id="home">
@@ -43,7 +44,7 @@
           <iframe src="http://ghbtns.com/github-btn.html?user=marcosvidolin&amp;repo=doco&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
         </div>
         
-        <a class="popup icon github item" data-content="View project on Github" href="https://github.com/marcosvidolin/doco">
+        <a class="popup icon github item" data-content="View project on Github" href="https://github.com/marcosvidolin/doco" onclick="ga('send', 'event', 'Doco', 'Github', 'View project on Github');">
           <i class="icon github"></i>
         </a>
       </div>
@@ -54,12 +55,10 @@
   <div class="ui inverted page grid masthead segment">
    <div class="column">
     <div class="introduction">
-     <h1 class="ui header">DOCO <a class="ui black label" href="https://github.com/marcosvidolin/doco/blob/master/RELEASE_NOTES.md">0.1.0</a></h1>
+     <h1 class="ui header"><strong>DOCO</strong> <a class="ui black label" href="https://github.com/marcosvidolin/doco/blob/master/RELEASE_NOTES.md">0.1.0</a></h1>
      <h2 class="ui header">Document Converter for Google Search API</h2>
      <p>Doco is a lightweight Java library used to convert (from and to) indexed Documents provided by Search API in Google App Engine.</p>
-     <a class="ui red large labeled icon button" 
-      onClick="_gaq.push(['_trackEvent', 'Doco', 'Download', 'doco-v0.1.0.jar']);"
-      href="https://github.com/marcosvidolin/doco/releases/download/v0.1.0/doco-v0.1.0.jar"><i class="awesome download cloud icon"></i> Download</a>
+     <a class="ui red large labeled icon button" onClick="ga('send', 'event', 'Doco', 'Download', 'v0.1.0');" href="https://github.com/marcosvidolin/doco/releases/download/v0.1.0/doco-v0.1.0.jar"><i class="awesome download cloud icon"></i> Download</a>
     </div>
     <div class="inverted advertisement">
     </div>
@@ -93,10 +92,10 @@
       </h2>
       <div class="ui stackable two column grid">
         <div class="column">
-          <a class="ui teal label" href="/collections/grid.html">Doco</a>
+          <a class="ui teal label" href="#">Doco</a>
             <pre>
               <code data-language="java">
-@DocumenttIndex
+@DocumentIndex
 public class Post {
 				
   @DocumentId
@@ -160,7 +159,7 @@ public class Post {
           </div>
         </h2>
         <div class="column">
-          <a class="ui teal label" href="/collections/menu.html">Doco</a>
+          <a class="ui teal label" href="#">Doco</a>
           	<pre>
               <code data-language="java">
 // just convert a Post to a Document
@@ -227,12 +226,12 @@ index.put(document);
           </div>
         </h2>
         <div class="column">
-          <a class="ui teal label" href="/collections/menu.html">Doco</a>
+          <a class="ui teal label" href="#">Doco</a>
           	<pre>
               <code data-language="java">
 Doco doco = new Doco();
 Index index = doco.getIndex(Post.class);
-Document document = index.get("00123");
+Document document = index.get(12345L);
  				
 Post post = doco.fromDocument(document, Post.class);
  				
@@ -257,7 +256,7 @@ IndexSpec indexSpec = IndexSpec.newBuilder()
 Index index = SearchServiceFactory.getSearchService()
   .getIndex(indexSpec);
   				
-Document document = index.get("00123");
+Document document = index.get(12345L);
               
 Post post = new Post();
 post.setId(document.getId());
@@ -282,9 +281,9 @@ post.setLocation(document.getOnlyField("location")
     <div class="ten wide column">
       <div class="ui one column stackable grid">
         <div class="column">
-          <a class="icon-github" href="https://github.com/marcosvidolin/doco">
+          <a class="icon-github" href="https://github.com/marcosvidolin/doco" onclick="ga('send', 'event', 'Doco', 'Github', 'Contribute and make Doco better');">
 		    <img src="/resource/images/github-11-xxl.png" class="ui small image">     
-		    <span style="color:white;"><font size="12px">GitHub</font> <br> <font size="4px">Contribute and make DOCO better</font></span>
+		    <span style="color:white;"><font size="12px">GitHub</font> <br> <font size="4px">Contribute and make <b>Doco</b> better</font></span>
 		  </a>
         </div>
         <!--div class="column">
