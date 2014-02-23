@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <meta name="description" content="Doco is a lightweight Java library used to convert (from and to) indexed Documents provided by Search API in Google App Engine." />
   <meta name="keywords" content="doco, java, search api, google, google app engine, app engine, appengine, library, framework, vidolin" />
-  <link rel="image_src" type="image/jpeg" href="images/share.png">
+  <link rel="image_src" type="image/jpeg" href="/resource/images/doco.png">
 
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" class="ui" href="/resource/library/semantic/css/semantic.min.css">
@@ -58,7 +58,7 @@
      <h2 class="ui header">Document Converter for Google Search API</h2>
      <p>Doco is a lightweight Java library used to convert (from and to) indexed Documents provided by Search API in Google App Engine.</p>
      <a class="ui red large labeled icon button" 
-      onClick="_gaq.push(['_trackEvent', 'Videos', 'Play', 'Gone With the Wind']);"
+      onClick="_gaq.push(['_trackEvent', 'Doco', 'Download', 'doco-v0.1.0.jar']);"
       href="https://github.com/marcosvidolin/doco/releases/download/v0.1.0/doco-v0.1.0.jar"><i class="awesome download cloud icon"></i> Download</a>
     </div>
     <div class="inverted advertisement">
