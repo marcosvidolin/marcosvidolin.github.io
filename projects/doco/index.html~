@@ -11,6 +11,7 @@
 
   <link rel="image_src" type="image/jpeg" href="/resource/images/doco.png">
 
+  <meta name="title" content="Doco - Document Converter for Google Search API" />
   <meta name="description" content="Doco is a lightweight Java library used to convert (from and to) indexed Documents provided by Search API in Google App Engine." />
   <meta name="keywords" content="doco, java, search api, google, google app engine, app engine, appengine, library, framework, vidolin" />
 
@@ -286,18 +287,18 @@ post.setLocation(document.getOnlyField("location")
 
   <div class="ui inverted teal page grid segment">
     <div class="ten wide column">
-      <div class="ui one column stackable grid">
+      <div class="ui two column stackable grid">
         <div class="column">
           <a class="icon-github" href="https://github.com/marcosvidolin/doco" onclick="ga('send', 'event', 'Doco', 'Github', 'Contribute and make Doco better');">
 		    <img src="/resource/images/github-11-xxl.png" class="ui small image">     
 		    <span style="color:white;"><font size="12px">GitHub</font> <br> <font size="4px">Contribute and make <b>Doco</b> better</font></span>
 		  </a>
         </div>
-        <!--div class="column">
-          <div class="column">
-            <i class="bug icon large"> <span style="color:white;"><font size="4px">Report Bug</font></span></i>
-          </div>
-        </div-->
+        <div class="column">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.vidolima.com/projects/doco/index.html">Share on Facebook</a>
+          <a href="https://twitter.com/home?status=http://www.vidolima.com/projects/doco/index.html">Share on Twitter</a>
+          <a href="https://plus.google.com/share?url=http://www.vidolima.com/projects/doco/index.html">Share on Google+</a>
+        </div>
       </div>
     </div>
     <div class="six wide right floated aligned column">
