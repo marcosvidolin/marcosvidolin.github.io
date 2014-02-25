@@ -58,15 +58,15 @@
 
           <a  class="popup icon github item" href="https://www.facebook.com/sharer/sharer.php?u=http://www.vidolima.com/projects/doco/index.html"
             onClick="ga('send', 'event', 'Media', 'Social', 'Facebook');" target="_blank">
-            <img src="/resource/images/social/facebook.png"/>
+            <img src="/resource/images/social/facebook.sgp" width="75%" height="75%"/>
           </a>
           <a  class="popup icon github item" href="https://twitter.com/home?status=http://www.vidolima.com/projects/doco/index.html"
             onClick="ga('send', 'event', 'Media', 'Social', 'Twitter');" target="_blank">
-            <img src="/resource/images/social/twitter.png"/>
+            <img src="/resource/images/social/twitter.sgp" width="75%" height="75%"/>
           </a>
           <a  class="popup icon github item" href="https://plus.google.com/share?url=http://www.vidolima.com/projects/doco/index.html"
             onClick="ga('send', 'event', 'Media', 'Social', 'Google Plus');" target="_blank">
-            <img src="/resource/images/social/gplus.png"/>
+            <img src="/resource/images/social/gplus.sgp" width="75%" height="75%"/>
           </a>
 
 
